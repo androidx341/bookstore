@@ -17,6 +17,10 @@ class BookRepository
             $books->where('authorId', $request->authorId);
         }
 
+        if ($request->has('self')){
+            $books->where('createBy', auth()->user()->id);
+        }
+
         return $books;
     }
 }

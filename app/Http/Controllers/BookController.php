@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use App\Http\Requests\BookCreateRequest;
+use App\Http\Requests\BookUpdateRequest;
 use App\Http\Resositories\BookRepository;
 use App\Http\Resources\BookResource;
 use App\Http\Resources\BooksResource;
@@ -66,7 +67,7 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(BookCreateRequest $request, $id)
+    public function update(BookUpdateRequest $request, $id)
     {
         $book = Book::findOrFail($id);
 
